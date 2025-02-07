@@ -50,6 +50,7 @@ jobs:
             host: ${{secrets.AWS_EC2_HOST}}
             username: ${{secrets.AWS_EC2_USER}}
             key: ${{secrets.AWS_EC2_KEY}}
+            passphrase: ${{ secrets.SSH_PASSPHRASE }}
             script: |
                 docker pull ${{secrets.DOCKER_USERNAME}}/react-app:${{github.sha}}
                 docker stop react-app || true
